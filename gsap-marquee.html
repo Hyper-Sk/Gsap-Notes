@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marquee</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+        @font-face{
+            font-family:Neue;
+            src:url(./NewMachina/NeueMachina-Regular.otf);
+        }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Neue,sans-serif;
+        color: white;
+      }
+      html,
+      body {
+        height: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(31, 31, 31);
+   
+      }
+      #page1, #page2, #page3{
+        height: 100%;
+        width: 100%;
+      }
+      #move{
+        background-color: #D9FF09;
+        display: flex;
+        padding:2rem 0;
+        overflow: hidden;
+    }
+    .marquee{
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        padding: 1rem 1rem;
+        gap: 2rem;
+        transform: translateX(-100%);
+      }
+
+      .marquee img{
+        height: 60px;
+      }
+      .marquee h1{
+        line-height: 0px;
+        color: black;
+        font-size: 4rem;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+    </style>
+    <body>
+        <div id="page1"></div>
+        <div id="page2">
+            <div id="move">
+                <div class="marquee">
+                    <h1>hello world</h1>
+                    <img src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg" alt="">
+                </div>
+                <div class="marquee">
+                    <h1>hello world</h1>
+                    <img src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg" alt="">
+                </div>
+                <div class="marquee">
+                    <h1>hello world</h1>
+                    <img src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg" alt="">
+                </div>
+                <div class="marquee">
+                    <h1>hello world</h1>
+                    <img src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg" alt="">
+                </div>
+                <div class="marquee">
+                    <h1>hello world</h1>
+                    <img src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg" alt="">
+                </div>
+                <div class="marquee">
+                    <h1>hello world</h1>
+                    <img src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg" alt="">
+                </div>
+                <div class="marquee">
+                    <h1>hello world</h1>
+                    <img src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="page3"></div>
+
+
+
+        <script>
+       
+            window.addEventListener('wheel',(event) => {
+               if(event.deltaY > 0){
+                gsap.to("#move .marquee",{
+                transform:'translateX(-200%)',
+                duration:5,
+                repeat:-1,
+                ease:'none'
+                })
+
+                gsap.to("#move img",{
+                    rotate:180
+                })
+
+               }else{
+                
+                gsap.to("#move .marquee",{
+                transform:'translateX(0%)',
+                duration:5,
+                repeat:-1,
+                ease:'none'
+                })
+
+                gsap.to("#move img",{
+                    rotate:0
+                })
+
+               }
+            })
+        
+        </script>
+    </body>
+</html>

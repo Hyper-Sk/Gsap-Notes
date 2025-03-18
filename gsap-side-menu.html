@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Trigger</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+     @font-face {
+      font-family: Newe;
+      src: url(./NewMachina/NeueMachina-Regular.otf);
+     }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Newe;
+      }
+      html,
+      body {
+        height: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      #navbar__top{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: white;
+        padding: 2.5rem;
+      }
+      #navbar__top h2{
+        font-weight: 500;
+        font-size: 1.8rem;
+      }
+      #navbar__top i{
+        font-size: 30px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      #navbar__sidebar{
+        /* display: none; */
+        position: fixed;
+        width: 40%;
+        top: 0;
+        right: -40%;
+        background-color: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        height: 100%;
+      }
+      #navbar__sidebar ul{
+        list-style: none;
+        padding-block: 150px;
+        padding-inline: 50px;
+      }
+      #navbar__sidebar ul li{
+        font-size:45px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        color: #4b4b4b;
+        cursor: pointer;
+        /* transition: 0.3s; */
+      }
+      #navbar__sidebar ul li:hover{
+        color: #000000;
+      }
+      #navbar__sidebar i{
+        position: absolute;
+        top: 5%;
+        right: 10%;
+        background-color: white;
+        padding: 5px;
+        border-radius: 50%;
+        font-size: 25px;
+        cursor: pointer;
+      }
+
+      .container {
+        height: 100%;
+      }
+      .container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div id="navbar__container">
+      <div id="navbar__top">
+          <h2>Crammaze Inc</h2>
+          <i class="ri-menu-3-line"></i>
+      </div>
+      <div id="navbar__sidebar">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Services</li>
+          <li>Contact</li>
+          <li>Courses</li>
+        </ul>
+        <i class="ri-close-line"></i>
+      </div>
+    </div>
+
+    <div class="container">
+      <img
+        src="https://plus.unsplash.com/premium_photo-1670527200668-ad4b53a1aefb?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+      />
+    </div>
+
+    <script>
+      let close = document.querySelector("#navbar__sidebar i")
+      let open = document.querySelector('#navbar__top i')
+      let tl = gsap.timeline()
+
+      tl.to("#navbar__sidebar",{
+        right:0,
+        duration:0.3,
+      })
+      tl.from("#navbar__sidebar ul li",{
+          x : 150,
+          opacity:0,
+          stagger:0.2,
+      })
+      tl.from("#navbar__sidebar i",{
+        opacity:0,
+        duration:0.2,
+      })
+
+      tl.pause()
+
+
+      open.addEventListener('click',function(){
+          tl.play()
+      })
+      close.addEventListener('click',function(){
+        tl.reverse()
+      })
+
+    </script>
+  </body>
+</html>

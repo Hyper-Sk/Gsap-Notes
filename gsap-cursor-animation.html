@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Trigger</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        background-color: black;
+        height: 100%;
+        font-family:'Courier New', Courier, monospace;
+      }
+      
+      #cursor {
+        background-color: white;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: fixed;
+        display: grid;
+        place-items: center;
+        z-index: 9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 5px;
+      }
+      /* #pointer {
+        background-color: black;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+      } */
+      #main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* cursor: none; */
+      }
+      #image {
+        width: 60vw;
+        height: 40vw;
+        position: relative;
+      }
+      #image img {
+        width: 100%;
+        height: 100%;
+      }
+      #overlay{
+        background-color: transparent;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cursor">
+      <div id="pointer"></div>
+    </div>
+
+
+    <div id="main">
+      <div id="image">
+        <div id="overlay"></div>
+        <img
+          src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt=""
+        />
+      </div>
+    </div>
+   
+
+    <script>
+      let main = document.querySelector('#main')
+      let cursor = document.querySelector("#cursor");
+      let imageDiv = document.querySelector("#image")
+
+      main.addEventListener("mousemove", (event) => {
+        gsap.to(cursor, {
+          x: event.x,
+          y: event.y,
+          duratio: 1,
+          ease: "back.out",
+        });
+      });
+      image.addEventListener("mousemove",(event) => {
+        cursor.innerHTML = 'View'
+        gsap.to(cursor,{
+            scale:3
+        })
+      })
+      image.addEventListener("mouseleave",(event) => {
+        cursor.innerHTML = ''
+        gsap.to(cursor,{
+            scale:1
+        })
+      })
+
+    </script>
+  </body>
+</html>

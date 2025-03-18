@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animations - Home</title>
+    <link rel="stylesheet" href="hello.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  </head>
+  <body>
+
+    <navbar id="navbar" class="section">
+      <h2>Animate</h2>
+      <div id="menu">
+        <ul>
+          <li>About</li>
+          <li>Services</li>
+          <li>Contact</li>
+          <li>Courses</li>
+        </ul>
+
+        <button>Request an Appointment</button>
+      </div>
+    </navbar>
+
+    <section id="hero" class="section">
+      <div class="hero__left">
+        <h2>This a Beautiful Place, It is What It Is</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam accusantium impedit facere libero quo tenetur atque tempora iure debitis doloremque ut, amet repellendus voluptates adipisci soluta est eligendi, reiciendis suscipit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque voluptas aliquam iste provident sint inventore in dolor, amet tempore eum!
+        </p>
+        <button> Book a Consultation <i class="ri-arrow-right-up-line"></i></button>
+      </div>
+      <div class="hero__right">
+        <img src="https://images.unsplash.com/photo-1633907284646-7abf4a195875?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      </div>
+    </section>
+
+    <!-- <section class="section" id="heading">
+      <h2>Our Cliets</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, dolore.</p>
+    </section> -->
+
+    <section id="clients" class="section">
+      <div class="client__single">
+        <img src="https://logowik.com/content/uploads/images/amazon-black3184.jpg" alt="">
+      </div>
+      <div class="client__single">
+        <img src="https://logowik.com/content/uploads/images/amazon-black3184.jpg" alt="">
+      </div>
+      <div class="client__single">
+        <img src="https://logowik.com/content/uploads/images/amazon-black3184.jpg" alt="">
+      </div>
+      <div class="client__single">
+        <img src="https://logowik.com/content/uploads/images/amazon-black3184.jpg" alt="">
+      </div>
+      <div class="client__single">
+        <img src="https://logowik.com/content/uploads/images/amazon-black3184.jpg" alt="">
+      </div>
+    </section>
+
+
+    <section class="section" id="heading">
+      <h2>Our Work</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, dolore.</p>
+    </section>
+
+    <section id="services" class="section">
+      <h2>Services</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla excepturi minima nostrum libero nam, odio consequatur reiciendis ducimus.</p>
+    </section>
+
+
+    <section id="work" class="section work1">
+      <div class="work__single dark left">
+        <div class="left">
+          <h2> Pay Per Click Advertusement</h2>
+          <p><i class="ri-arrow-right-up-line"></i>Read More</p>
+        </div>
+        <div class="right">
+          <img src="https://images.unsplash.com/photo-1524721696987-b9527df9e512?q=80&w=1033&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        </div>
+      </div>
+      <div class="work__single right">
+        <div class="left">
+          <h2> Search Engine optimization</h2>
+          
+          <p><i class="ri-arrow-right-up-line"></i>Read More</p>
+        </div>
+        <div class="right">
+          <img src="https://images.unsplash.com/photo-1553949357-e164b5711492?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        </div>
+      </div>
+    </section>
+    <section id="work" class="section work2">
+      <div class="work__single left">
+        <div class="left">
+          <h2> E-Mail Marketing</h2>
+          <p><i class="ri-arrow-right-up-line"></i>Read More</p>
+        </div>
+        <div class="right">
+          <img src="https://images.unsplash.com/photo-1564296786842-4fc88fb50485?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        </div>
+      </div>
+      <div class="work__single dark right">
+        <div class="left">
+          <h2> Social Media Marketing</h2>
+          
+          <p><i class="ri-arrow-right-up-line"></i>Read More</p>
+        </div>
+        <div class="right">
+          <img src="https://images.unsplash.com/photo-1486551937199-baf066858de7?q=80&w=1833&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        </div>
+      </div>
+    </section>
+
+
+    <script src="hello.js"></script>
+  </body>
+</html>

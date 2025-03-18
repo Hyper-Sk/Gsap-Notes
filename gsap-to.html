@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP To</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: darkgray;
+        }
+        #box_1{
+            height: 200px;
+            width: 200px;
+            background-color: maroon;
+        }
+        #box_2{
+            height: 200px;
+            width: 200px;
+            background-color: yellow;
+        }
+        #box_3{
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+        }
+        #box_4{
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+        }
+        #box_5{
+            height: 200px;
+            width: 200px;
+            background-color: orange;
+        }
+    </style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
+
+
+
+</head>
+<body>
+    <div id="box_1">
+    </div>
+    <div id="box_2">
+    </div>
+    <div id="box_3">
+    </div>
+    <div id="box_4">
+    </div>
+    <div id="box_5">
+    </div>
+
+   <script>
+        gsap.to("#box_1",{
+            x:500,
+            duration:2,
+            delay:1,
+        })
+        gsap.to("#box_2",{
+            y:50,
+            x:400,
+            duration:4,
+            delay:1,
+        })
+        gsap.to("#box_3",{
+            x:500,
+            duration:1,
+            delay:1,
+            rotate:360,
+            backgroundColor:'green'
+        })
+        gsap.to("#box_4",{
+            x:500,
+            duration:1,
+            delay:1,
+            backgroundColor:'black',
+            borderRadius:'50%',
+            scale:2,
+        })
+        gsap.to("#box_5",{
+            x:500,
+            duration:1,
+            delay:1,
+            rotate:180,
+            backgroundColor:'red',
+            repeat:-1,
+            // -1 is Infinity
+            yoyo:true,
+        })
+   </script>
+</body>
+</html>

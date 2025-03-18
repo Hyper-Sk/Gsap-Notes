@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stagger</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+        }
+
+        body{
+            background-color: rgb(39, 39, 39);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+       .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+       }
+       .container ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+       }
+       h1{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        white-space: nowrap;
+        font-size: 50px;
+       }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h2>Lorem</h2>
+        </div>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Sevices</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <h1>
+        Lorem ipsum dolor sit amet.
+    </h1>
+
+
+
+
+    <script>
+        // creating timeline 
+        // time line is used to work animation with sync 
+        let tl = gsap.timeline()
+        tl.from(".logo h2",{
+            y:-30,
+            opacity:0,
+        })
+        tl.from(".container ul li",{
+            y:-30,
+            opacity:0,
+            stagger:0.3
+        })
+        tl.from("h1",{
+            opacity:0,
+            rotate:180
+        })
+    </script>
+</body>
+</html>

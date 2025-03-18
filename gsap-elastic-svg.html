@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Trigger</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: white;
+      }
+
+      body {
+        background-color: rgb(39, 39, 39);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .area{
+        /* background-color: green; */
+        display: flex;
+        /* justify-content: center; */
+        background-color: green;
+      }
+      svg  {
+        /* border: 2px solid white; */
+        background-color: black;
+    }
+    svg path{
+        stroke-width: 2px;
+    }
+    </style>
+  </head>
+  <body>
+        <div class="area" id="area">
+            <svg width="1000" height="500">
+                <path d="M 0 250 Q 500 250 1000 250" stroke="white" fill="transparent"/>
+              </svg>
+        </div>
+
+
+        <script>
+            let path = `M 0 250 Q 500 0 1000 250`
+            let finalPath = `M 0 250 Q 500 250 1000 250`
+
+
+            let area = document.querySelector('#area')
+
+            area.addEventListener('mousemove',(event)=>{
+                // console.log(event.x)
+                console.log(event.y)
+                path = `M 0 250 Q ${event.x} ${event.y} 1000 250`
+                gsap.to("#area svg path",{
+                    attr:{
+                        d: path,
+                    },
+                    duration:0.2,
+                    ease:"power3.out"
+                })
+
+            })
+            area.addEventListener('mouseleave',(event)=>{
+                gsap.to("#area svg path",{
+                    attr:{
+                        d: finalPath,
+                        
+                    },
+                    duration: 1.5,
+                    ease: "elastic.out(1,0.2)",
+                })
+            })
+        </script>
+  </body>
+</html>

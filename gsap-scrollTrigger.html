@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Trigger</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* color: white; */
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      section {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      #section1 {
+        background-color: aqua;
+      }
+      #section2 {
+        background-color: yellow;
+      }
+      #section3 {
+        background-color: orange;
+      }
+      #section4 {
+        background-color: skyblue;
+      }
+      #section5 {
+        background-color: lightcyan;
+      }
+      #section6 {
+        background-color: peachpuff;
+      }
+      #section6 h1 {
+        background-color: lightblue;
+        padding: 1rem;
+        margin-bottom: 4rem;
+      }
+      #section6 h3 {
+        background-color: lightcoral;
+        padding: 1rem;
+
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+      }
+      #box {
+        background-color: rgb(0, 0, 109);
+      }
+    </style>
+  </head>
+  <body>
+    <section id="section1">
+      <div class="box" id="box"></div>
+    </section>
+    <section id="section2">
+      <div class="box" id="box"></div>
+    </section>
+    <section id="section3">
+      <div class="box" id="box"></div>
+    </section>
+    <section id="section4">
+      <div class="box" id="box"></div>
+    </section>
+    <section id="section5">
+      <div class="box" id="box"></div>
+    </section>
+    <section id="section6">
+      <h1>Lorem, ipsum dolor.</h1>
+      <h3>Lorem, ipsum dolor.</h3>
+    </section>
+    
+
+    <script>
+      gsap.from("#section1 #box", {
+        opacity:0,
+        x: 1000,
+        duration: 2,
+        scrollTrigger: "#section1 #box",
+      });
+      gsap.from("#section2 #box", {
+        x: 1000,
+        duration: 2,
+        scrollTrigger:{
+            trigger: "#section2 #box",
+            // markers:true,
+        } 
+      });
+      gsap.from("#section3 #box", {
+        x: 1000,
+        duration: 2,
+        scrollTrigger:{
+            trigger: "#section3 #box",
+            scroller:"body",
+            // markers:true,
+        } 
+      });
+      gsap.from("#section4 #box", {
+        x: 1000,
+        duration: 2,
+        scrollTrigger:{
+            trigger: "#section4 #box",
+            scroller:"body",
+            // markers:true,
+            // start:'top 50%',
+        } 
+      });
+      gsap.from("#section5 #box", {
+        x: 1000,
+        duration: 2,
+        scrollTrigger:{
+            trigger: "#section5 #box",
+            scroller:"body",
+            // markers:true,
+            start:'top 40%',
+            end:"top 60%",
+            scrub:4,
+        
+        } 
+      });
+      gsap.from("#section6 h1", {
+        x: 1000,
+        duration: 2,
+        scrollTrigger:{
+            trigger: "#section6 h1",
+            scroller:"body",
+            markers:true,
+            start:'top 80%'
+
+        } 
+      });
+      gsap.from("#section6 h3", {
+        x: -1000,
+        duration: 2,
+        scrollTrigger:{
+            trigger: "#section6 h3",
+            scroller:"body",
+            markers:true,
+            start:'top 80%'
+        } 
+      });
+    </script>
+  </body>
+</html>
